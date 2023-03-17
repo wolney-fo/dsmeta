@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+    --black: #000000;
+    --white: #FCFCFC;
+    --blue-200: #88D0F0;
+    --yellow-400: #F9E451;
+    --pastel: #F4F1ED;
+    --slate-900: rgb(15 23 42);
+
+    --font-sans: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', consolas, monospace;
+
+    --font-medium: 500;
+}
+
+
 * {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -7,9 +24,9 @@
 
 body,
 html {
-  background-color: #000;
-  color: #fff;
-  font-weight: 500;
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: var(--font-medium);
 }
 
 a,
@@ -17,4 +34,14 @@ a:hover,
 a:visited {
   color: unset;
   text-decoration: none;
+}
+
+.dsmeta-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#sales {
+  padding: 40px 10px;
 }
