@@ -1,11 +1,16 @@
 trigger:
-  - main
+- main
 
 pool:
-  vmImage: "ubuntu-latest"
+  vmImage: 'ubuntu-latest'
 
 steps:
-  - task: Maven@3
-    inputs:
-      mavenPomFile: "backend/pom.xml"
-      goals: "package"
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'backend/pom.xml'
+    goals: 'package'
+  workingDirectory: 'backend'
+
+- path: 
+    exclude:
+    - 'frontend'
