@@ -9,8 +9,13 @@ steps:
   inputs:
     mavenPomFile: 'backend/pom.xml'
     goals: 'package'
+    excludeTasks: 'frontend/**'
   workingDirectory: 'backend'
-
-- path: 
-    exclude:
-    - 'frontend'
+  
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: '<Azure subscription>'
+    appName: '<Azure Web App name>'
+    runtimeStack: 'TOMCAT'
+    javaVersion: '17'
+    package: '$(System.DefaultWorkingDirectory)/backend/target/*.jar'
